@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class uiScript : MonoBehaviour
 {
     public int playerRotationalPos;
-    [SerializeField] private Text rotationText;
+    [SerializeField] private TextMeshProUGUI rotationText;
     [SerializeField] private GameObject playerObj;
     // Start is called before the first frame update
     void Start()
     {
-        rotationText = this.gameObject.GetComponentInChildren<Text>();
+        rotationText = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         playerObj = this.gameObject.transform.parent.gameObject;
         
     }
@@ -23,19 +24,19 @@ public class uiScript : MonoBehaviour
         switch (playerRotationalPos)
         {
             case 0:
-                rotationText.text = "North";
+                rotationText.SetText("North");
                 break;
 
             case 90: 
-                rotationText.text = "East";
+                rotationText.SetText("East");
                 break;
 
             case 180: 
-                rotationText.text = "South";
+                rotationText.SetText("South");
                 break;
 
             case 270:
-                rotationText.text = "West";
+                rotationText.SetText("West");
                 break;
 
             default:
