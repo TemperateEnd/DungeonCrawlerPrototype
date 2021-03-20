@@ -70,7 +70,6 @@ public class movementScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Tile")
         {
-            Debug.Log("on top of tile");
             currentTile = (GameObject)other.gameObject;
         }  
     }  

@@ -114,16 +114,6 @@ MonoBehaviour:
   canMoveEast: 1
   canMoveSouth: 1
   canMoveWest: 1
-  recommendedTiles:
-  - {fileID: 4162814085293722921, guid: d691d1140c2f059448be93638b474b40, type: 3}
-  - {fileID: 6428407117026903698, guid: e1ac8b2dd5152ef499a57376a7e4c478, type: 3}
-  - {fileID: 973120145776697874, guid: a2b01dd2b9b95484385e7d84f07e7342, type: 3}
-  - {fileID: 9008769742296037163, guid: 8e3967acfdd67154c92ae309546c5fe0, type: 3}
-  - {fileID: 1788102422155179913}
-  - {fileID: 4984974075776695479, guid: 7f0f2f18b8572254ca149e02fa6c68d9, type: 3}
-  - {fileID: 3420983680288386902, guid: b7168c1aeddc3714c9679e62b204c62e, type: 3}
-  - {fileID: 3053487011864382319, guid: 0dd25b61ac7c1e741b0e7f21feaffcee, type: 3}
-  - {fileID: 3992597724278664918, guid: fada03a2e0ca5a841bb1a40978a118f7, type: 3}
 --- !u!65 &-8783636829733451437
 BoxCollider:
   m_ObjectHideFlags: 0

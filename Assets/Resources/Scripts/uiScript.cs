@@ -12,7 +12,7 @@ public class uiScript : MonoBehaviour
     void Start()
     {
         rotationText = this.gameObject.GetComponentInChildren<Text>();
-        playerObj = GameObject.Find("playerObj");
+        playerObj = this.gameObject.transform.parent.gameObject;
         
     }
 
