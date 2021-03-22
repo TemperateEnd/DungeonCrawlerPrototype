@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1ad70541e07d84d8b9596ef0a325dc, type: 3}
   m_Name: Maze1
   m_EditorClassIdentifier: 
-  map: {fileID: 2800000, guid: de9a21f1ade99fb43b3412f8d77c1130, type: 3}
-  mazePositions:
-  - {fileID: 11400000, guid: 976a0a9c1b2181b4eb74e581c37ce049, type: 2}
-  - {fileID: 11400000, guid: b67509e1edbc8a947aa7a0cc9f24861d, type: 2}
-  - {fileID: 11400000, guid: 76c90aeb0c118c44babc51c9e049a228, type: 2}
+  mazeTexture: {fileID: 2800000, guid: de9a21f1ade99fb43b3412f8d77c1130, type: 3}
+  mazeSpawnTextureArray:
+  - {fileID: 2800000, guid: e4098efc4494e4f4e99108701cd37ad1, type: 3}
+  - {fileID: 2800000, guid: 48698f2fef77bde46bdc8dbf5d8e8ff0, type: 3}

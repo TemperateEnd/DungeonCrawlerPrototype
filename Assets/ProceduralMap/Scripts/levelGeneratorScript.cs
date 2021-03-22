@@ -7,19 +7,16 @@ public class levelGeneratorScript : MonoBehaviour
 {
     public MazeObject selectedMaze;
     //public Texture2D map;
-    public colourToPrefab[] colorMappings;
+    public colourToPrefab[] colourToMazeTile;
+
+    public colourToPrefab[] colourToGameObj;
     public int overallScaleOffset = 1;
 
-    public GameObject playerObj;
-    public GameObject bossObj;
-
-    public Vector3 playerSpawnPosition;
-    public Vector3 bossSpawnPosition;
-
-    public MazeSpawnObject[] chosenPositions;
+    [SerializeField] private int spawnMapNumber;
 
     void Start() 
     {
+        spawnMapNumber = UnityEngine.Random.Range(0, selectedMaze.mazeSpawnTextureArray.Length);
         GenerateLevel();
     }
 
@@ -27,40 +24,33 @@ public class levelGeneratorScript : MonoBehaviour
     private void GenerateLevel()
     {
         //Loop through texture width and height
-        for(int x = 0; x < selectedMaze.map.width; x++)
+        for(int x = 0; x < selectedMaze.mazeTexture.width; x++)
         {
-            for(int z = 0; z < selectedMaze.map.height; z++)
+            for(int z = 0; z < selectedMaze.mazeTexture.height; z++)
             {
                 GenerateTile(x, z);
             }
         }
 
-        for(int i = 0; i < chosenPositions.Length;i++)
+        for(int x = 0; x < selectedMaze.mazeSpawnTextureArray[spawnMapNumber].width; x++)
         {
-            chosenPositions[i] = selectedMaze.mazePositions[UnityEngine.Random.Range(0, selectedMaze.mazePositions.Length)];
-            chosenPositions[i].positionOccupied = true;
-
-            if(selectedMaze.mazePositions[UnityEngine.Random.Range(0, selectedMaze.mazePositions.Length)].positionOccupied == true) {
-                chosenPositions[i] = selectedMaze.mazePositions[UnityEngine.Random.Range(0, selectedMaze.mazePositions.Length)];  
+            for(int z = 0; z < selectedMaze.mazeSpawnTextureArray[spawnMapNumber].height; z++)
+            {
+                GenerateGameObject(x, z);
             }
         }
-
-        playerSpawnPosition = new Vector3(chosenPositions[0].position.x, 0.5f, chosenPositions[0].position.z);
-        bossSpawnPosition = new Vector3(chosenPositions[1].position.x, 0.5f, chosenPositions[1].position.z);
-
-        Instantiate(playerObj, playerSpawnPosition, Quaternion.identity);
     }
 
     private void GenerateTile(int x, int z)
     {
-        Color pixelColor = selectedMaze.map.GetPixel(x, z); //Color of pixel within texture
+        Color pixelColor = selectedMaze.mazeTexture.GetPixel(x, z); //Color of pixel within texture
 
         if(pixelColor.a == 0)
         {
             return; //Because the pixel is transparent, the pixel will be skipped
         }
 
-        foreach(colourToPrefab colorMapping in colorMappings)
+        foreach(colourToPrefab colorMapping in colourToMazeTile)
         {
             if(colorMapping.colour.Equals(pixelColor))
             {
@@ -69,6 +59,30 @@ public class levelGeneratorScript : MonoBehaviour
                 Vector3 pos = new Vector3(overallScaleOffset * (x + colorMapping.offsetX), 
                                             colorMapping.prefab.transform.position.y, 
                                             overallScaleOffset * (z + colorMapping.offsetZ));
+                Instantiate(colorMapping.prefab, pos, Quaternion.identity, transform);
+            }
+        }
+    }
+
+    private void GenerateGameObject(int x, int z)
+    {
+        Color pixelColor = selectedMaze.mazeSpawnTextureArray[spawnMapNumber].GetPixel(x, z);
+
+        if (pixelColor.a == 0)
+        {
+            return; //Skip pixel if pixel is transparent
+        }
+
+        foreach(colourToPrefab colorMapping in colourToGameObj)
+        {
+            if(colorMapping.colour.Equals(pixelColor))
+            {
+                colorMapping.prefab.transform.localScale = colorMapping.localScaleOfThisObject;
+
+                Vector3 pos = new Vector3(overallScaleOffset * (x + colorMapping.offsetX), 
+                                            colorMapping.prefab.transform.position.y, 
+                                            overallScaleOffset * (z + colorMapping.offsetZ));
+
                 Instantiate(colorMapping.prefab, pos, Quaternion.identity, transform);
             }
         }

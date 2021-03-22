@@ -298,6 +298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
         type: 3}
+      propertyPath: colourToGameObj.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
       propertyPath: objectsInMaze.Array.data[0]
       value: 
       objectReference: {fileID: 2202875158808868402, guid: 4e97f92d0af3386479835d1e38247089,
@@ -314,6 +319,68 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2933034008334649686, guid: f6345599744e2e342b842c2e9d87bb4f,
         type: 3}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[0].colour.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[0].colour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 2202875158808868402, guid: 4e97f92d0af3386479835d1e38247089,
+        type: 3}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[1].colour.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[1].colour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 2933034008334649686, guid: f6345599744e2e342b842c2e9d87bb4f,
+        type: 3}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[1].localScaleOfThisObject.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[0].localScaleOfThisObject.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[0].localScaleOfThisObject.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[0].localScaleOfThisObject.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[1].localScaleOfThisObject.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250928179404149620, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
+        type: 3}
+      propertyPath: colourToGameObj.Array.data[1].localScaleOfThisObject.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1250928179404149621, guid: e4aeb634b34b08c43a97a56d9c1fb8ec,
         type: 3}
       propertyPath: m_LocalPosition.x
